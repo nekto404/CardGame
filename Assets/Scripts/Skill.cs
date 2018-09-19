@@ -16,6 +16,7 @@ public enum Triger
     Atack,
     GetDamage
 }
+
 [Serializable]
 public class Skill
 {

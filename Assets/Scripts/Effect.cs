@@ -4,7 +4,6 @@
 public enum CharacteristicTarget
 {
     HitPoints,
-    ManaPoints,
     AttackPoints,
     ArmorPoints,
     SpeedPoints
@@ -15,6 +14,7 @@ public enum EffectValueType
     Pecrent,
     Points
 }
+
 [Serializable]
 public class Effect
 {

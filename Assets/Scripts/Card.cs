@@ -6,7 +6,8 @@ public enum CardTypes
 {
     War,
     Arc,
-    Mag
+    Mag,
+    Sup
 }
 
 public class Card : MonoBehaviour {
