@@ -60,5 +60,6 @@ MonoBehaviour:
   Armor: 10
   MagicDef: 30
   Speed: 20
-  CardType: 3
+  AttackType: 3
+  DamageType: 0
   Skills: []

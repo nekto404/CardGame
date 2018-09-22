@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3274dfff648bc44a85f19268ad535e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Acolyte
+  Name: Student magician
   Icon: {fileID: 0}
   Level: 1
   Exp: 0
@@ -60,5 +60,6 @@ MonoBehaviour:
   Armor: 10
   MagicDef: 30
   Speed: 20
-  CardType: 3
+  AttackType: 2
+  DamageType: 1
   Skills: []

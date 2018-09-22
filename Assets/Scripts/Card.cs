@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CardTypes
+public enum AttackType
 {
-    War,
-    Arc,
-    Mag,
-    Sup
+    dist,
+    mil,
+    massEnemy,
+    ally,
+    allies
+}
+
+public enum DamageType
+{
+    pure,
+    magic,
+    phys,
+    heal
 }
 
 public class Card : MonoBehaviour {
@@ -23,7 +32,8 @@ public class Card : MonoBehaviour {
     public int MagicDef;
     public int Speed;
 
-    public CardTypes CardType;
+    public AttackType AttackType;
+    public DamageType DamageType;
 
     public List<Skill> Skills;
 }
