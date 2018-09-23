@@ -31,4 +31,41 @@ public class Battle : MonoBehaviour {
         }
     }
 
+    public List<Character> AvalableTarget(Character character, bool WithGroupOne)
+    {
+        List<Character> targets = new List<Character>();
+        if (character.AttackType == AttackType.allies || character.AttackType == AttackType.ally)
+        {
+            var TargetGroup = WithGroupOne ? GroupOne : GroupTwo;
+            foreach (var targetChar in TargetGroup.Characters)
+            {
+                targets.Add(targetChar.Character); 
+            }
+        }
+        else if (character.AttackType == AttackType.massEnemy || character.AttackType == AttackType.dist)
+        {
+            var TargetGroup = WithGroupOne ? GroupTwo : GroupOne;
+            foreach (var targetChar in TargetGroup.Characters)
+            {
+                targets.Add(targetChar.Character);
+            }
+        }
+        else 
+        {
+            var TargetGroup = WithGroupOne ? GroupTwo : GroupOne;
+            foreach (var targetChar in TargetGroup.Characters)
+            {
+                if (targetChar.posY==1)
+                    targets.Add(targetChar.Character);
+            }
+            if (targets.Count == 0)
+            {
+                foreach (var targetChar in TargetGroup.Characters)
+                {
+                    targets.Add(targetChar.Character);
+                }
+            }
+        }
+        return targets;
+    }
 }
