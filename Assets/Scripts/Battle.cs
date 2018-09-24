@@ -1,11 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
+
+public class TurnData
+{
+    public Character Character;
+    public float TimeByTurn;
+
+    public TurnData(Character character,float time)
+    {
+        Character = character;
+        TimeByTurn = time;
+    }
+}
 
 public class Battle : MonoBehaviour {
 
     public Group GroupOne;
     public Group GroupTwo;
+
+    private List<TurnData> queue;
+
+    public void Start()
+    {
+        queue = QueueCreator();
+    }
 
     public void AtackEfect(Character character, Character target, bool WithGroupOne)
     {
@@ -67,5 +88,27 @@ public class Battle : MonoBehaviour {
             }
         }
         return targets;
+    }
+
+    public List<TurnData> QueueCreator()
+    {
+        var queue = new List<TurnData>();
+        foreach (var character in GroupOne.Characters)
+        {
+            var timePerTurn = 1f / character.Character.speed;
+            for (var i = 0; i <5; i++)
+            {
+                queue.Add(new TurnData(character.Character, timePerTurn * i));
+            }
+        }
+        foreach (var character in GroupTwo.Characters)
+        {
+            var timePerTurn = 1f / character.Character.speed;
+            for (var i = 0; i < 5; i++)
+            {
+                queue.Add(new TurnData(character.Character, timePerTurn * i));
+            }
+        }
+        return queue.OrderBy(t => t.TimeByTurn).ToList<TurnData>();
     }
 }
