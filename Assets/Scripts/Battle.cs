@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-
-public class TurnData
+public struct TurnData
 {
     public Character Character;
     public float TimeByTurn;
@@ -23,11 +21,26 @@ public class Battle : MonoBehaviour {
 
     private List<TurnData> queue;
 
+    #region MonoBehaviourLogic
     public void Start()
     {
         queue = QueueCreator();
     }
+    #endregion
 
+    #region BattleLogic
+    public void StartTurn()
+    {
+
+    }
+
+    public void EndOfTurn()
+    {
+        queue.OrderBy(t => t.TimeByTurn);
+    }
+    #endregion
+
+    #region UtilityLogic
     public void AtackEfect(Character character, Character target, bool WithGroupOne)
     {
         if (character.AttackType == AttackType.allies)
@@ -90,13 +103,13 @@ public class Battle : MonoBehaviour {
         return targets;
     }
 
-    public List<TurnData> QueueCreator()
+    public List<TurnData> QueueCreator(int count=5)
     {
         var queue = new List<TurnData>();
         foreach (var character in GroupOne.Characters)
         {
             var timePerTurn = 1f / character.Character.speed;
-            for (var i = 0; i <5; i++)
+            for (var i = 0; i < count; i++)
             {
                 queue.Add(new TurnData(character.Character, timePerTurn * i));
             }
@@ -104,11 +117,13 @@ public class Battle : MonoBehaviour {
         foreach (var character in GroupTwo.Characters)
         {
             var timePerTurn = 1f / character.Character.speed;
-            for (var i = 0; i < 5; i++)
+            for (var i = 0; i < count; i++)
             {
                 queue.Add(new TurnData(character.Character, timePerTurn * i));
             }
         }
-        return queue.OrderBy(t => t.TimeByTurn).ToList<TurnData>();
+        return queue.OrderBy(t => t.TimeByTurn).ToList();
     }
+    #endregion
+
 }

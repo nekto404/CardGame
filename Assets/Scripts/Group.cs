@@ -13,4 +13,9 @@ public struct CharAndPosition
 
 public class Group : MonoBehaviour {
     public List<CharAndPosition> Characters;
+
+    public void CreatGroup(List<CharAndPosition> characters)
+    {
+        Characters = characters;
+    }
 }
