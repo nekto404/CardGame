@@ -43,32 +43,32 @@ public class Battle : MonoBehaviour {
     #region UtilityLogic
     public void AtackEfect(Character character, Character target, bool WithGroupOne)
     {
-        if (character.AttackType == AttackType.allies)
+        if (character.AtackType == AtackType.allies)
         {
             var TargetGroup = WithGroupOne ? GroupOne : GroupTwo;
             foreach (var targetChar in TargetGroup.Characters)
             {
-                targetChar.Character.GetDamage(character.atack, character.DamageType);
+                targetChar.Character.GetDamage(character.Atack, character.DamageType);
             }
         }
-        else if (character.AttackType == AttackType.massEnemy)
+        else if (character.AtackType == AtackType.massEnemy)
         {
             var TargetGroup = WithGroupOne ? GroupTwo : GroupOne;
             foreach (var targetChar in TargetGroup.Characters)
             {
-                targetChar.Character.GetDamage(character.atack, character.DamageType);
+                targetChar.Character.GetDamage(character.Atack, character.DamageType);
             }
         }
         else
         {
-            target.GetDamage(character.atack, character.DamageType);
+            target.GetDamage(character.Atack, character.DamageType);
         }
     }
 
     public List<Character> AvalableTarget(Character character, bool WithGroupOne)
     {
         List<Character> targets = new List<Character>();
-        if (character.AttackType == AttackType.allies || character.AttackType == AttackType.ally)
+        if (character.AtackType == AtackType.allies || character.AtackType == AtackType.ally)
         {
             var TargetGroup = WithGroupOne ? GroupOne : GroupTwo;
             foreach (var targetChar in TargetGroup.Characters)
@@ -76,7 +76,7 @@ public class Battle : MonoBehaviour {
                 targets.Add(targetChar.Character); 
             }
         }
-        else if (character.AttackType == AttackType.massEnemy || character.AttackType == AttackType.dist)
+        else if (character.AtackType == AtackType.massEnemy || character.AtackType == AtackType.dist)
         {
             var TargetGroup = WithGroupOne ? GroupTwo : GroupOne;
             foreach (var targetChar in TargetGroup.Characters)
@@ -89,7 +89,7 @@ public class Battle : MonoBehaviour {
             var TargetGroup = WithGroupOne ? GroupTwo : GroupOne;
             foreach (var targetChar in TargetGroup.Characters)
             {
-                if (targetChar.posY==1)
+                if (targetChar.PosY==1)
                     targets.Add(targetChar.Character);
             }
             if (targets.Count == 0)
@@ -108,7 +108,7 @@ public class Battle : MonoBehaviour {
         var queue = new List<TurnData>();
         foreach (var character in GroupOne.Characters)
         {
-            var timePerTurn = 1f / character.Character.speed;
+            var timePerTurn = 1f / character.Character.Speed;
             for (var i = 0; i < count; i++)
             {
                 queue.Add(new TurnData(character.Character, timePerTurn * i));
@@ -116,7 +116,7 @@ public class Battle : MonoBehaviour {
         }
         foreach (var character in GroupTwo.Characters)
         {
-            var timePerTurn = 1f / character.Character.speed;
+            var timePerTurn = 1f / character.Character.Speed;
             for (var i = 0; i < count; i++)
             {
                 queue.Add(new TurnData(character.Character, timePerTurn * i));

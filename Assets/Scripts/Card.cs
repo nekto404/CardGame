@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AttackType
+public enum AtackType
 {
     dist,
     mil,
@@ -32,7 +32,7 @@ public class Card : MonoBehaviour {
     public int MagicDef;
     public int Speed;
 
-    public AttackType AttackType;
+    public AtackType AtackType;
     public DamageType DamageType;
 
     public List<Skill> Skills;

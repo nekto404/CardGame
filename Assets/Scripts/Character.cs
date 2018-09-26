@@ -11,15 +11,30 @@ public class Character : MonoBehaviour
     public int HitPointsMax;
     public int HitPointsCurent;
 
-    public int atack;
-    public int armor;
-    public int magicDef;
-    public int speed;
+    public int Atack;
+    public int Armor;
+    public int MagicDef;
+    public int Speed;
 
-    public AttackType AttackType;
+    public AtackType AtackType;
     public DamageType DamageType;
 
     public List<Skill> Skills;
+
+    public Character(Card card)
+    {
+        Name = card.Name;
+        Icon = card.Icon;
+        HitPointsCurent = card.HitPoints;
+        HitPointsMax = card.HitPoints;
+        Atack = card.Atack;
+        MagicDef = card.MagicDef;
+        Speed = card.Speed;
+        AtackType = card.AtackType;
+        DamageType = card.DamageType;
+        Skills = card.Skills;
+    }
+
 
     public void GetDamage(int damage, DamageType damageType)
     {
@@ -34,10 +49,10 @@ public class Character : MonoBehaviour
                 HitPointsCurent -= damage;
                 break;
             case DamageType.magic:
-                HitPointsCurent -= damage * (100 - magicDef) / 100; 
+                HitPointsCurent -= damage * (100 - MagicDef) / 100; 
                 break;
             case DamageType.phys:
-                HitPointsCurent -= damage * (100 - armor) / 100;
+                HitPointsCurent -= damage * (100 - Armor) / 100;
                 break;
         }
     }
