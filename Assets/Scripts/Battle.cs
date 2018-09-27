@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -20,23 +21,49 @@ public class Battle : MonoBehaviour {
     public Group GroupTwo;
 
     private List<TurnData> queue;
+    private bool battle;
 
     #region MonoBehaviourLogic
     public void Start()
     {
         queue = QueueCreator();
+        battle = false;
+        StartCoroutine(BattleLogic());
     }
     #endregion
 
     #region BattleLogic
-    public void StartTurn()
+    private IEnumerator BattleLogic()
     {
-
+        yield return StartBattle();
+        while (!battle)
+        {
+            yield return StartTurn();
+            yield return TurnLogic();
+            yield return EndOfTurn();
+        }
+        yield return null;
     }
 
-    public void EndOfTurn()
+    private IEnumerator StartBattle()
+    {
+        yield return null;
+    }
+
+    private IEnumerator TurnLogic()
+    {
+        yield return null;
+    }
+
+    private IEnumerator StartTurn()
+    {
+        yield return null;
+    }
+
+    private IEnumerator EndOfTurn()
     {
         queue.OrderBy(t => t.TimeByTurn);
+        yield return null;
     }
     #endregion
 
