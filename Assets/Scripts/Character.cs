@@ -35,7 +35,6 @@ public class Character : MonoBehaviour
         Skills = card.Skills;
     }
 
-
     public void GetDamage(int damage, DamageType damageType)
     {
         switch (damageType)

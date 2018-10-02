@@ -19,14 +19,26 @@ public class Battle : MonoBehaviour {
 
     public Group GroupOne;
     public Group GroupTwo;
-
+    public BattleUI BattleUI;
+    public static Battle Instance;
     private List<TurnData> queue;
     private bool battle;
 
     #region MonoBehaviourLogic
     public void Start()
     {
-        queue = QueueCreator();
+        if (Instance)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+        if (!BattleUI)
+            return;
+        queue = QueueCreator(BattleUI.Instance.GetQueueCount());
+        BattleUI.Instance.UpdateQueue(queue.GetRange(0, BattleUI.Instance.GetQueueCount()));
         battle = false;
         StartCoroutine(BattleLogic());
     }
@@ -152,5 +164,4 @@ public class Battle : MonoBehaviour {
         return queue.OrderBy(t => t.TimeByTurn).ToList();
     }
     #endregion
-
 }
