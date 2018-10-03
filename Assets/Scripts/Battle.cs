@@ -24,6 +24,7 @@ public class Battle : MonoBehaviour {
     private List<TurnData> queue;
     private bool battle;
 
+
     #region MonoBehaviourLogic
     public void Start()
     {

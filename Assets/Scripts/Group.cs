@@ -33,6 +33,8 @@ public struct CardAndPosition
 }
 
 public class Group : MonoBehaviour {
+
+    public bool isPlayer;
     public List<CharAndPosition> Characters;
 
     public void CreatGroup(List<CharAndPosition> characters)
