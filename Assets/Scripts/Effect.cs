@@ -1,5 +1,5 @@
 ﻿using System;
-
+using UnityEngine;
 
 public enum CharacteristicTarget
 {
@@ -16,7 +16,7 @@ public enum EffectValueType
 }
 
 [Serializable]
-public class Effect
+public class Effect : MonoBehaviour
 {
     public string Name;
     public int Duration;

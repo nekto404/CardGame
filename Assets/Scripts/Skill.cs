@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public enum EffectTarget
 {
@@ -18,7 +19,7 @@ public enum Triger
 }
 
 [Serializable]
-public class Skill
+public class Skill : MonoBehaviour
 {
     public string Name;
     public EffectTarget TargetType;
