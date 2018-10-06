@@ -19,21 +19,21 @@ public enum DamageType
     heal
 }
 
-public class Card : MonoBehaviour {
+//public class Card : MonoBehaviour {
 
-    public string Name;
-    public Sprite Icon;
-    public int Level;
-    public int Exp;
-    public int HitPoints;
+//    public string Name;
+//    public Sprite Icon;
+//    public int Level;
+//    public int Exp;
+//    public int HitPoints;
 
-    public int Atack;
-    public int Armor;
-    public int MagicDef;
-    public int Speed;
+//    public int Atack;
+//    public int Armor;
+//    public int MagicDef;
+//    public int Speed;
 
-    public AtackType AtackType;
-    public DamageType DamageType;
+//    public AtackType AtackType;
+//    public DamageType DamageType;
 
-    public List<Skill> Skills;
-}
+//    public List<Skill> Skills;
+//}

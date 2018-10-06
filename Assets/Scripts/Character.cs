@@ -21,19 +21,23 @@ public class Character : MonoBehaviour
 
     public List<Skill> Skills;
 
-    public Character(Card card)
-    {
-        Name = card.Name;
-        Icon = card.Icon;
-        HitPointsCurent = card.HitPoints;
-        HitPointsMax = card.HitPoints;
-        Atack = card.Atack;
-        MagicDef = card.MagicDef;
-        Speed = card.Speed;
-        AtackType = card.AtackType;
-        DamageType = card.DamageType;
-        Skills = card.Skills;
-    }
+    public int Level;
+    public int Exp;
+
+
+    //public Character(Card card)
+    //{
+    //    Name = card.Name;
+    //    Icon = card.Icon;
+    //    HitPointsCurent = card.HitPoints;
+    //    HitPointsMax = card.HitPoints;
+    //    Atack = card.Atack;
+    //    MagicDef = card.MagicDef;
+    //    Speed = card.Speed;
+    //    AtackType = card.AtackType;
+    //    DamageType = card.DamageType;
+    //    Skills = card.Skills;
+    //}
 
     public void GetDamage(int damage, DamageType damageType)
     {
