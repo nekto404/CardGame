@@ -16,9 +16,8 @@ public enum EffectValueType
 }
 
 [Serializable]
-public class Effect : MonoBehaviour
+public class Effect 
 {
-    public string Name;
     public int Duration;
     public int Value;
     public CharacteristicTarget Target;

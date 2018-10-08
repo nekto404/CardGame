@@ -19,7 +19,7 @@ public enum Triger
 }
 
 [Serializable]
-public class Skill : MonoBehaviour
+public class Skill 
 {
     public string Name;
     public EffectTarget TargetType;
