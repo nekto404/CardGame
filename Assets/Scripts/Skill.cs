@@ -23,7 +23,7 @@ public class Skill
 {
     public string Name;
     public EffectTarget TargetType;
-    public int Chanse;
+    public int Chance;
     public Triger EffectTriger;
     public List<Effect> Effects;
 }

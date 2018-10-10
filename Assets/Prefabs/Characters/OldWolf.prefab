@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1316084977039942}
+  m_RootGameObject: {fileID: 1045000061220196}
   m_IsPrefabAsset: 1
---- !u!1 &1316084977039942
+--- !u!1 &1045000061220196
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4665570933183676}
-  - component: {fileID: 114462816763195424}
+  - component: {fileID: 4323076068603192}
+  - component: {fileID: 114087615134540026}
   m_Layer: 0
-  m_Name: AddSpeed10Point
+  m_Name: OldWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4665570933183676
+--- !u!4 &4323076068603192
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1316084977039942}
+  m_GameObject: {fileID: 1045000061220196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,19 +40,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114462816763195424
+--- !u!114 &114087615134540026
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1316084977039942}
+  m_GameObject: {fileID: 1045000061220196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fcb1162ea504bb4592820e04d5e1f0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b0a2de4e4196de458a00cc235ae0630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: AddSpeed10Point
-  Duration: 1
-  Value: 10
-  Target: 3
-  Type: 1
+  Name: OldWolf
+  Icon: {fileID: 0}
+  HitPointsMax: 200
+  HitPointsCurent: 200
+  Atack: 100
+  Armor: 0
+  MagicDef: 10
+  Speed: 50
+  AtackType: 1
+  DamageType: 2
+  Skills:
+  - Name: Wildness
+    TargetType: 1
+    Chance: 60
+    EffectTriger: 1
+    Effects:
+    - Duration: 1
+      Value: 20
+      Target: 1
+      Type: 0
+  Level: 2
+  Exp: 0

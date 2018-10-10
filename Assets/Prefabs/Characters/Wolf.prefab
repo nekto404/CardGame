@@ -64,12 +64,11 @@ MonoBehaviour:
   Skills:
   - Name: Wildness
     TargetType: 1
-    Chanse: 60
+    Chance: 60
     EffectTriger: 1
     Effects:
-    - Name: 
-      Duration: 5
-      Value: 5
+    - Duration: 1
+      Value: 20
       Target: 1
       Type: 0
   Level: 1
