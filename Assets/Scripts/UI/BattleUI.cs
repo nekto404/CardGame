@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattleUI : MonoBehaviour {
 
     public QueueUI QueueUI;
+    public BattleField BattleField;
     public static BattleUI Instance;
 
     private int queueCount;

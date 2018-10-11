@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QueueUI {
+public class QueueUI : MonoBehaviour {
 
     public List<Image> Images;
 

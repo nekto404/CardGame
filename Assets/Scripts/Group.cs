@@ -18,20 +18,6 @@ public struct CharAndPosition
     }
 }
 
-//public struct CardAndPosition
-//{
-//    public Card Card;
-//    public int PosX;
-//    public int PosY;
-
-//    public CardAndPosition(Card card, int posX, int posY)
-//    {
-//        Card = card;
-//        PosX = posX;
-//        PosY = posY;
-//    }
-//}
-
 public class Group : MonoBehaviour {
 
     public bool isPlayer;
