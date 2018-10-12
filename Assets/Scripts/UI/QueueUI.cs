@@ -12,7 +12,7 @@ public class QueueUI : MonoBehaviour {
         return Images.Count;
     }
 
-	public void Update(List<Character> characters)
+	public void UpdateQueueUI(List<Character> characters)
     {
         var i = 0;
         foreach (var img in Images)

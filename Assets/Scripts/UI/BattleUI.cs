@@ -22,7 +22,7 @@ public class BattleUI : MonoBehaviour {
 
     public void UpdateQueue(List<Character> characters)
     {
-        QueueUI.Update(characters);
+        QueueUI.UpdateQueueUI(characters);
     }
 
     public void UpdateQueue(List<TurnData> turns)
@@ -32,7 +32,7 @@ public class BattleUI : MonoBehaviour {
         {
             characters.Add(turn.Character);
         }
-        QueueUI.Update(characters);
+        QueueUI.UpdateQueueUI(characters);
     }
 
     void Start () {
