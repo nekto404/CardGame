@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4323076068603192}
   - component: {fileID: 114087615134540026}
   m_Layer: 0
-  m_Name: Guardsman
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,16 +51,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0a2de4e4196de458a00cc235ae0630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Guardsman
-  Icon: {fileID: 21300000, guid: 9975305725c349140a9c602fc6047b38, type: 3}
-  HitPointsMax: 250
-  HitPointsCurent: 250
-  Atack: 120
-  Armor: 40
+  Name: Wolf
+  Icon: {fileID: 0}
+  HitPointsMax: 120
+  HitPointsCurent: 120
+  Atack: 60
+  Armor: 0
   MagicDef: 10
   Speed: 70
   AtackType: 1
   DamageType: 2
-  Skills: []
+  Skills:
+  - Name: Wildness
+    TargetType: 1
+    Chance: 60
+    EffectTriger: 1
+    Effects:
+    - Duration: 1
+      Value: 20
+      Target: 1
+      Type: 0
   Level: 1
   Exp: 0
